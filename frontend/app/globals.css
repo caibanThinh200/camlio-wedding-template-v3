@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette */
+  --color-red-deep: #600000;
+  --color-red-mid: #8f0303;
+  --color-red-dark: #380000;
+  --color-blush: rgba(143, 3, 3, 0.1);
+  --color-blush-dark: rgba(56, 0, 0, 0.2);
+  --color-text: #241a0f;
+  --color-text-muted: rgba(36, 26, 15, 0.6);
+
+  /* Fonts */
+  --font-display: var(--font-cormorant), Georgia, 'Times New Roman', serif;
+  --font-body: var(--font-dm-sans), 'Helvetica Neue', Arial, sans-serif;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: #fff;
+}
+
+/* ─── Typography helpers ────────────────────────────────────── */
+
+/* Display headings — Cormorant Garamond SemiBold */
+.display-hero {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 42px;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .display-hero {
+    font-size: 68px;
+    line-height: 64px;
+    letter-spacing: -4px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .display-hero {
+    font-size: 94px;
+    line-height: 82px;
+    letter-spacing: -6.58px;
+  }
+}
+
+.display-xl {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 34px;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .display-xl {
+    font-size: 56px;
+    line-height: 54px;
+    letter-spacing: -2.8px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .display-xl {
+    font-size: 84px;
+    line-height: 82px;
+    letter-spacing: -4.2px;
+  }
+}
+
+.display-lg {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 28px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .display-lg {
+    font-size: 42px;
+    line-height: 40px;
+    letter-spacing: -1.8px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .display-lg {
+    font-size: 60px;
+    line-height: 58px;
+    letter-spacing: -2.4px;
+  }
+}
+
+.display-lg em {
+  font-style: italic;
+}
+
+.display-hero em {
+  font-style: italic;
+}
+
+.display-xl em {
+  font-style: italic;
+}
+
+/* Body text */
+.body-lg {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media (min-width: 768px) {
+  .body-lg {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+.body-sm {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: normal;
+  text-transform: uppercase;
+  letter-spacing: -0.64px;
+}
+
+/* Step numbers — large Cormorant numerals */
+.step-number {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: normal;
+  letter-spacing: -1.6px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1280px) {
+  .step-number {
+    font-size: 60px;
+    letter-spacing: -2.4px;
+  }
+}
