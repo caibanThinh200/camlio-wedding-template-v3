@@ -1,36 +1,46 @@
 import Header from '@/app/components/global/Header'
 import Footer, { type FooterProps } from '@/app/components/global/Footer'
+import { getSettings } from '@/sanity/lib/service'
 
-// Phase 1 mock data — replace with Sanity settings query in Phase 2
-const footerData: FooterProps = {
+const fallbackFooter: FooterProps = {
   headline: 'CREATE SOMETHING BEAUTIFUL, MEMORABLE & UNIQUELY YOURS',
   italicPart: 'MEMORABLE',
   ctaLabel: 'CONTACT US',
   ctaHref: '/contact',
-  backgroundImage:
-    'https://www.figma.com/api/mcp/asset/eec296c2-ef8a-4095-985b-9b8fd47e39d3',
-  address: {
-    label: 'Address',
-    lines: ['Based in Ho Chi Minh City', 'Available for destination events'],
-  },
-  contact: {
-    phone: '+84 123 456 789',
-    email: 'camlio.studio@outlook.com',
-  },
-  social: [
-    { platform: 'Instagram', href: 'https://instagram.com' },
-    { platform: 'Facebook', href: 'https://facebook.com' },
-    { platform: 'TikTok', href: 'https://tiktok.com' },
-  ],
-  copyright: '©2026 All rights reserved',
+  backgroundImage: '',
+  address: { label: 'Address', lines: [] },
+  contact: { phone: '', email: '' },
+  social: [],
+  copyright: `©${new Date().getFullYear()} All rights reserved`,
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default async function Layout({ children }: { children: React.ReactNode }) {
+  const settings = await getSettings()
+
+  const navLinks = (settings?.navLinks ?? []).map((l: { label?: string | null; href?: string | null; _key: string }) => ({
+    label: l.label ?? '',
+    href: l.href ?? '/',
+  }))
+
+  const footer: FooterProps = settings
+    ? {
+        ...fallbackFooter,
+        contact: {
+          phone: settings.contactPhone ?? '',
+          email: settings.contactEmail ?? '',
+        },
+        social: (settings.social ?? []).map((s: { platform?: string | null; href?: string | null; _key?: string }) => ({
+          platform: s.platform ?? '',
+          href: s.href ?? '#',
+        })),
+      }
+    : fallbackFooter
+
   return (
     <>
-      <Header />
+      <Header navLinks={navLinks.length ? navLinks : undefined} />
       <main>{children}</main>
-      <Footer {...footerData} />
+      <Footer {...footer} />
     </>
   )
 }

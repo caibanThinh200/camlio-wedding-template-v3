@@ -4,10 +4,11 @@
   "workspaces": ["frontend", "studio"],
   "scripts": {
     "dev": "concurrently \"npm run dev --workspace=studio\" \"npm run dev --workspace=frontend\"",
-    "predev": "npm run sanity:typegen --workspace=frontend",
+    "predev": "npm run typegen --workspace=studio",
     "type-check": "npm run type-check --workspace=frontend && npm run type-check --workspace=studio",
     "lint": "npm run lint --workspace=frontend",
-    "create-block": "node create-block.js"
+    "create-block": "node create-block.js",
+    "seed": "node scripts/seed-sanity.mjs"
   },
   "devDependencies": {
     "concurrently": "^9.0.0"

@@ -158,3 +158,15 @@ export default function HomePage() {
     </>
   )
 }
+
+
+// import PageBuilder from '@/app/components/PageBuilder'
+// import { getHomePage } from '@/sanity/lib/service'
+
+// export default async function HomePage() {
+//   const page = await getHomePage()
+//   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+//   const blocks = (page?.pageBuilder ?? []) as any[]
+
+//   return <PageBuilder blocks={blocks} />
+// }

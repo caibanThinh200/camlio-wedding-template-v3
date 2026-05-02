@@ -25,7 +25,11 @@ export const experience = defineType({
       options: { hotspot: true },
       fields: [{ name: 'alt', type: 'string', title: 'Alt Text' }],
     }),
-    defineField({ name: 'videoUrl', title: 'Video URL', type: 'url' }),
-    defineField({ name: 'videoDuration', title: 'Duration Label (e.g. 5:32)', type: 'string' }),
+    defineField({
+      name: 'videoUrl',
+      title: 'Video URL',
+      type: 'string',
+      description: 'External URL (https://…) or internal path (/mp4/wedding.mp4)',
+    }),
   ],
 })
