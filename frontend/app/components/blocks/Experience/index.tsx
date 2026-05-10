@@ -77,7 +77,7 @@ export default function ExperienceBlock({
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
   const [hoverRatio, setHoverRatio] = useState<number | null>(null)
-  console.log(duration)
+
   const ytId = extractYouTubeId(videoUrl)
   const isYouTube = ytId !== null
 
