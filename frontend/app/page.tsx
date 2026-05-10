@@ -11,7 +11,7 @@ import ProcessBlock, { type ProcessBlockProps } from '@/app/components/blocks/Pr
 
 const heroData: HeroBlockProps = {
   backgroundImage:
-    'https://www.figma.com/api/mcp/asset/bd0f9b83-9591-4e82-a786-abcca489c75ab',
+    'https://www.figma.com/api/mcp/asset/bd0f9b83-9591-4e82-a786-abcca489c75a',
   headline: 'DESIGNING MOMENTS, CRAFTING ATMOSPHERES',
   italicWord: 'MOMENTS',
   ctaLabel: 'Book a Consultation',
