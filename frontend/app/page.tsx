@@ -146,27 +146,27 @@ const processData: ProcessBlockProps = {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-export default function HomePage() {
-  return (
-    <>
-      <HeroBlock {...heroData} />
-      <AboutBlock {...aboutData} />
-      <SocialProofBlock {...socialProofData} />
-      <ServicesBlock {...servicesData} />
-      <ExperienceBlock {...experienceData} />
-      <ProcessBlock {...processData} />
-    </>
-  )
-}
-
-
-// import PageBuilder from '@/app/components/PageBuilder'
-// import { getHomePage } from '@/sanity/lib/service'
-
-// export default async function HomePage() {
-//   const page = await getHomePage()
-//   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-//   const blocks = (page?.pageBuilder ?? []) as any[]
-
-//   return <PageBuilder blocks={blocks} />
+// export default function HomePage() {
+//   return (
+//     <>
+//       <HeroBlock {...heroData} />
+//       <AboutBlock {...aboutData} />
+//       <SocialProofBlock {...socialProofData} />
+//       <ServicesBlock {...servicesData} />
+//       <ExperienceBlock {...experienceData} />
+//       <ProcessBlock {...processData} />
+//     </>
+//   )
 // }
+
+
+import PageBuilder from '@/app/components/PageBuilder'
+import { getHomePage } from '@/sanity/lib/service'
+
+export default async function HomePage() {
+  const page = await getHomePage()
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const blocks = (page?.pageBuilder ?? []) as any[]
+
+  return <PageBuilder blocks={blocks} />
+}
