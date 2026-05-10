@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "sanity:typegen": "cd ../studio && sanity schema extract && sanity typegen generate"
+    "sanity:typegen": "cd ../studio && ../node_modules/.bin/sanity schema extract && ../node_modules/.bin/sanity typegen generate"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",
