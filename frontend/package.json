@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run sanity:typegen && next build",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "sanity:typegen": "sanity typegen generate"
+    "sanity:typegen": "cd ../studio && sanity schema extract && sanity typegen generate"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",
